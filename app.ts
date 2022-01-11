@@ -5,20 +5,21 @@ import bodyParser from "body-parser";
 
 const app: Application = express(); // create an express application
 const port = 3000; // default port to listen
-app.use(bodyParser.json(), cors()); // add middlewares
+app.use(cors(), bodyParser.json()); // add middlewares
 
 // a static file server that points to the "public" directory
 app.use(express.static(__dirname + "/public"));
 
 // define a route handler for the default home page
 app.get("/", (req: Request, res: Response) => {
-    res.send("Hello world!");
+    const { name } = req.query;
+    res.send(`Hello ${name}!`);
 });
 
 // define a route handler for welcome by name from path /welcome/:name
-app.get("/welcome/:name", (req: Request, res: Response) => {
-    const { name } = req.params;
-    res.send(`Hello ${name}!`);
+app.get("/welcome/:name/:age", (req: Request, res: Response) => {
+    const { name, age } = req.params;
+    res.send(`Hello ${name}!, your age is ${age}`);
 });
 
 // define a route handler for welcome by name from body

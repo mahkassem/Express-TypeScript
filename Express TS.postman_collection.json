@@ -11,12 +11,18 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000",
+					"raw": "http://localhost:3000?name=Mahmoud",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "3000"
+					"port": "3000",
+					"query": [
+						{
+							"key": "name",
+							"value": "Mahmoud"
+						}
+					]
 				}
 			},
 			"response": []
@@ -46,7 +52,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/welcome/Mahmoud Kassem",
+					"raw": "http://localhost:3000/welcome/Mahmoud Kassem/32",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -54,7 +60,8 @@
 					"port": "3000",
 					"path": [
 						"welcome",
-						"Mahmoud Kassem"
+						"Mahmoud Kassem",
+						"32"
 					]
 				}
 			},
